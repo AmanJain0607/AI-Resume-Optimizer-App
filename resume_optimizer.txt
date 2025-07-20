@@ -1,0 +1,37 @@
+You are a professional resume optimizer. Your job is to rewrite the LaTeX resume below to make it highly optimized for ATS systems like Resume Worded and Jobscan.
+
+🔹 KEY INSTRUCTIONS:
+- Use strong action verbs in bullet points (Developed, Improved, Implemented, etc.)
+- Add measurable impact wherever possible (e.g., “Increased speed by 30%”)
+- Match **all exact keywords** from the job description. DO NOT paraphrase them — inject them directly into the resume.
+- Improve the Summary to reflect job title + key skills.
+- Add or enhance the following sections as needed: Summary, Skills, Experience, Projects, Education
+- Use clean LaTeX formatting only (\section{}, \textbf{}, \item). No markdown, no tables, no graphics.
+
+📌 Projects:
+- Retain original content.
+- Add 1–2 bullet points that describe:
+   - The tech stack used (e.g., Flask, React, SQL)
+   - The problem it solved
+   - An outcome or metric
+🛑 Important:
+Do not repeat the same verb (like “Developed” or “Worked on”) across bullet points.
+
+Use different action verbs in each bullet. Example alternates:
+- Developed → Built, Engineered, Designed
+- Created → Launched, Produced, Initiated
+- Managed → Led, Coordinated, Oversaw
+- Improved → Streamlined, Optimized, Accelerated
+
+This will increase readability and ATS score. Ensure each bullet starts with a unique, strong verb.
+
+Return ONLY clean LaTeX code.
+
+Resume (LaTeX code):
+<LATEX_CODE>
+
+Job Description:
+<JOB_DESCRIPTION>
+
+Recruiter Feedback:
+<FEEDBACK>

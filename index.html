@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Resume Generator</title>
+  <style>
+    body { font-family: Arial; padding: 2rem; background-color: #f9f9f9; }
+    textarea, input, button { width: 100%; margin-top: 10px; padding: 10px; font-size: 1rem; }
+    button { background-color: #28a745; color: white; border: none; cursor: pointer; }
+    label { font-weight: bold; margin-top: 20px; display: block; }
+    .section { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); margin-top: 2rem; }
+  </style>
+</head>
+<body>
+
+  <div class="section">
+    <h2>Generate Tailored Resume</h2>
+    <form id="resume-form">
+      <label for="resume_content">Paste Your Resume (Text)</label>
+      <textarea name="resume_content" rows="8" required></textarea>
+
+      <label for="job_description">Job Description</label>
+      <textarea name="job_description" rows="6" required></textarea>
+
+      <label for="company_name">Company Name (Optional)</label>
+      <input name="company_name" type="text" />
+
+      <label for="api_key">Your Gemini API Key (Recommended)</label>
+      <input name="api_key" type="text" placeholder="Get one at https://makersuite.google.com/app/apikey" />
+
+      <button type="submit">Generate Resume</button>
+    </form>
+
+    <div id="result" style="margin-top:20px;"></div>
+  </div>
+
+  <script>
+    const form = document.getElementById('resume-form');
+    const resultDiv = document.getElementById('result');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      resultDiv.innerHTML = "Generating... Please wait ⏳";
+
+      const formData = new FormData(form);
+      const response = await fetch('/generate_resume', {
+        method: 'POST',
+        body: formData
+      });
+
+      const data = await response.json();
+      if (data.resume_id) {
+        resultDiv.innerHTML = `
+          <p><strong>Resume Score:</strong> ${data.score !== undefined ? data.score : 'N/A'}/10</p>
+          <p><strong>Feedback:</strong> ${data.feedback || 'No feedback available.'}</p>
+        <a href="/download_pdf/${data.resume_id}"><button>Download Resume PDF</button></a>
+      `;
+
+      } else {
+        resultDiv.innerHTML = `<p style="color:red;">Error: ${data.error}</p>`;
+      }
+    });
+  </script>
+</body>
+</html>

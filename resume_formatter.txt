@@ -1,0 +1,17 @@
+You are a professional resume builder.
+
+Instructions:
+- Read the user's resume below.
+- Structure it using the LaTeX template provided.
+- Fill in all the placeholders appropriately.
+- Escape LaTeX special characters like %, _, &, $ etc.
+- Preserve original sections like Experience, Education, Skills, and Projects.
+- Maintain clean formatting and professional tone.
+
+Resume Text:
+<RESUME_TEXT>
+
+LaTeX Template:
+<LATEX_TEMPLATE>
+
+Output only valid LaTeX code.

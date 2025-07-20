@@ -1,0 +1,79 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{titlesec}
+\usepackage{xcolor}
+
+% Formatting
+\setlist[itemize]{noitemsep, topsep=0pt}
+\titleformat{\section}{\large\bfseries}{}{0em}{}
+\pagenumbering{gobble}
+
+\begin{document}
+
+%====================
+% Name & Contact
+%====================
+\begin{center}
+    {\LARGE \textbf{<FULL_NAME>}} \\
+    <EMAIL> \quad | \quad <PHONE> \quad | \quad \href{<LINK>}{<LINK>} \\
+\end{center}
+
+\vspace{0.5em}
+
+%====================
+% Summary
+%====================
+\section*{Professional Summary}
+<BRIEF_SUMMARY>
+
+%====================
+% Skills
+%====================
+\section*{Skills}
+\begin{itemize}
+    \item \textbf{Programming:} Java, Python, SQL, JavaScript
+    \item \textbf{Frameworks:} Spring Boot, React, Node.js
+    \item \textbf{Databases:} MySQL, MongoDB, PostgreSQL
+    \item \textbf{Tools/Platforms:} Git, AWS, Docker, VS Code
+\end{itemize}
+
+%====================
+% Experience
+%====================
+\section*{Experience}
+\textbf{<ROLE>}, <COMPANY> \hfill <DATES> \\
+\begin{itemize}
+    \item Developed ...
+    \item Achieved ...
+\end{itemize}
+
+\textbf{<ROLE>}, <COMPANY> \hfill <DATES> \\
+\begin{itemize}
+    \item ...
+\end{itemize}
+
+%====================
+% Projects
+%====================
+\section*{Projects}
+\textbf{<PROJECT_NAME>} — \href{<GITHUB_LINK>}{GitHub} \\
+\begin{itemize}
+    \item ...
+    \item ...
+\end{itemize}
+
+\textbf{<PROJECT_NAME>} — \href{<GITHUB_LINK>}{GitHub} \\
+\begin{itemize}
+    \item ...
+\end{itemize}
+
+%====================
+% Education
+%====================
+\section*{Education}
+\textbf{<DEGREE>}, <INSTITUTE> \hfill <DATES> \\
+CGPA: <CGPA>
+
+\end{document}
